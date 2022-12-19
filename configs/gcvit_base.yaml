@@ -1,0 +1,31 @@
+init_parm:
+  resume: False
+  start_epoch: 0
+  end_epoch: 300
+  num_worker: 16
+  input_w: 512
+  input_h: 512
+train:
+  train_set: /home/student/Desktop/efficentnet/conbine.txt
+  batch_size: 20
+vaild:
+  vaild_set: /home/student/Desktop/efficentnet/vaild_set.txt
+  batch_size: 20
+test:
+  test_set: None
+optimizer:
+  optim: AdamW
+  lr: 0.0001
+  weght_decay: 0.01
+  momentum: 0
+scheduler:
+  scheduler: ExponentialLR
+  T_max: 5
+  gamma: 0.95
+model:
+  model_name: gcvit_base
+  checkpoint_path: /home/student/Desktop/efficentnet/checkpoint/gcvit_base_bast_0.85757.pickle
+loss:
+  loss_function: mix_loss
+public:
+  public_set: /home/student/Desktop/efficentnet/public_data.txt
